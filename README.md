@@ -10,10 +10,11 @@ The whole app is a single `index.html` file. There is nothing to install and no 
 - **Glossary:** 15 flip-cards covering terms like slip knot, chain, yarn over, single crochet, tension, and frogging, with search.
 - **Step tiles:** 8 steps shown as tiles along a "yarn trail." Steps unlock in order, and each has an illustration, instructions, and a tip.
 - **Tutorial videos:** embedded beginner videos for the steps where motion is hardest to picture (slip knot, chain, single crochet, turning, fasten off).
+- **Hints from Loopy:** three built-in hints per step that cycle each time a child taps the hint button.
 - **"I'm Stuck" button:** a low-pressure way for kids to signal difficulty.
 - **Progress and badges:** a progress ring and rewards for finishing steps.
 - **Gallery:** real projects made by a kid crocheter, for inspiration on what to make next.
-- **Parent / teacher dashboard (PIN-protected):** per-step attempts, "stuck" taps, time spent, and automatic alerts when a step looks tricky, so a parent can reach out to the teacher early.
+- **Parent / teacher dashboard (PIN-protected):** per-step attempts, "stuck" taps, hints used, time spent, and automatic alerts when a step looks tricky, so a parent can reach out to the teacher early.
 
 ## Why it exists
 
@@ -29,10 +30,10 @@ Open `index.html` in any browser, or host it for free on GitHub Pages:
 
 ## Known limitations
 
-- **"Ask Loopy" AI hints** rely on Claude.ai's built-in connection and will not work when hosted elsewhere. Hosting it on GitHub Pages requires replacing them with pre-written hints or adding your own backend (never put an API key in the page).
-- **Progress is saved per browser and device.** The dashboard only shows data from the device being used. A multi-family dashboard would need a database and logins.
-- **The parent PIN (default `1234`) is a soft gate** to keep kids out. It is visible in the page source and is not real security.
-- Gallery photos are embedded in the file, so anyone who visits the public page can view and save them.
+- **Progress is saved in the browser (localStorage), per device.** The dashboard only shows data from the device being used. A multi-family dashboard with teacher alerts would need a database and logins.
+- **The parent PIN (default `1234`) is a soft gate** to keep kids out. It is visible in the page source and is not real security. Change `PARENT_PIN_DEFAULT` in `index.html` to set your own.
+- **Gallery photos are embedded in the file,** so anyone who visits the public page can view and save them.
+- **Hints are pre-written,** not generated live. Adding AI-generated hints would need a small backend that keeps an API key private.
 
 ## Tech
 
